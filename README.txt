@@ -1,28 +1,22 @@
 PACE SHOWCASES WEBSITE
 ======================
 
-Files:
-- index.html
-- styles.css
+Current pages:
+- index.html — main PACE landing page
+- event.html — PACE Winter Showcase details + Add to Cart
+- register.html — player registration form + payment handoff
+- styles.css — shared styling
 
-Current site content:
-- PACE Showcases branding
-- Player Access & Collegiate Exposure
-- "More than a number. Find your PACE."
-- DII + DIII recruiting focus
-- Upcoming Charleston showcase: Dec. 19–20, 2026
-- Venue listed as "Course announcement coming soon"
-- John Dessy contact information
-
-Quick deployment:
-1. Upload index.html and styles.css to the root of your GitHub repository.
-2. In GitHub: Settings -> Pages.
-3. Choose "Deploy from a branch."
-4. Select your main branch and /(root).
-5. Save.
-
-6. Point paceshowcases.com to GitHub Pages after the site is live.
+Current checkout flow:
+Home -> Select Event -> Event Details -> Add to Cart -> Registration -> Payment handoff
 
 Important:
-The current buttons use john.dessy@paceshowcases.com.
-No registration/payment backend is connected yet.
+The registration and cart flow is functional in the browser using localStorage.
+Actual card processing is NOT connected yet.
+
+To turn payment live, connect one of:
+- Stripe Checkout / Stripe Payment Link
+- Square Checkout
+- another hosted payment provider
+
+Once a checkout URL or payment provider is selected, the Continue to Payment button can be connected without redesigning the flow.
