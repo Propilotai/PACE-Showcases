@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="Register for the PACE Winter Showcase." />
+  <title>Register | PACE Showcases</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="PACE Showcases home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="flag"></span>
+          <span class="path"></span>
+          <span class="p-letter">P</span>
+        </span>
+        <span class="brand-text">
+          <strong>PACE</strong>
+          <small>SHOWCASES</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#format">Format</a>
+        <a href="event.html">Events</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="btn btn-small" href="event.html">Select Event</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="register-hero">
+      <div class="shell">
+        <div class="eyebrow">PLAYER REGISTRATION</div>
+        <h1>PACE Winter Showcase</h1>
+        <p>December 19–20, 2026 · Charleston, South Carolina</p>
+      </div>
+    </section>
+
+    <section class="registration-section">
+      <div class="shell registration-layout">
+        <form class="registration-form" id="registrationForm">
+          <div class="form-section">
+            <div class="form-heading">
+              <span>01</span>
+              <div>
+                <h2>Player Information</h2>
+                <p>Tell us who will be participating.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <label>Player first name<input required name="playerFirst" type="text"></label>
+              <label>Player last name<input required name="playerLast" type="text"></label>
+              <label>Graduation year
+                <select required name="gradYear">
+                  <option value="">Select</option>
+                  <option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option>
+                </select>
+              </label>
+              <label>High school<input required name="highSchool" type="text"></label>
+              <label>Home city<input required name="city" type="text"></label>
+              <label>State<input required name="state" type="text" maxlength="2" placeholder="SC"></label>
+              <label>Player email<input required name="playerEmail" type="email"></label>
+              <label>Player phone<input name="playerPhone" type="tel"></label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-heading">
+              <span>02</span>
+              <div>
+                <h2>Parent / Guardian</h2>
+                <p>Primary registration contact.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label>Parent / guardian name<input required name="parentName" type="text"></label>
+              <label>Parent / guardian email<input required name="parentEmail" type="email"></label>
+              <label>Parent / guardian phone<input required name="parentPhone" type="tel"></label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-heading">
+              <span>03</span>
+              <div>
+                <h2>Golf Profile</h2>
+                <p>Basic information coaches may use to understand your current level.</p>
+              </div>
+            </div>
+            <div class="form-grid">
+              <label>Current scoring average<input name="scoringAverage" type="number" step="0.1"></label>
+              <label>Handicap / index<input name="handicap" type="text"></label>
+              <label class="full-width">Junior golf profile / results link<input name="profileUrl" type="url" placeholder="https://"></label>
+              <label class="full-width">Anything else coaches should know?<textarea name="notes" rows="4"></textarea></label>
+            </div>
+          </div>
+
+          <label class="consent-row">
+            <input required type="checkbox" name="accuracy">
+            <span>I confirm the registration information above is accurate.</span>
+          </label>
+
+          <button class="btn registration-submit" type="submit">Continue to Payment</button>
+          <p class="payment-status" id="paymentStatus"></p>
+        </form>
+
+        <aside class="order-summary">
+          <div class="summary-label">YOUR EVENT</div>
+          <h3>PACE Winter Showcase</h3>
+          <div class="summary-line"><span>Date</span><strong>Dec. 19–20, 2026</strong></div>
+          <div class="summary-line"><span>Location</span><strong>Charleston, SC</strong></div>
+          <div class="summary-line"><span>Division focus</span><strong>DII / DIII Men</strong></div>
+          <div class="summary-total"><span>Total</span><strong>Price coming soon</strong></div>
+          <p>Secure payment will be connected before registration opens publicly.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <div>© 2026 PACE Showcases. All rights reserved.</div>
+      <div>Player Access & Collegiate Exposure</div>
+    </div>
+  </footer>
+
+<script>
+document.getElementById('registrationForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(this).entries());
+  localStorage.setItem('paceRegistration', JSON.stringify(data));
+  document.getElementById('paymentStatus').textContent =
+    'Registration information saved. Payment checkout is ready to connect once your Stripe, Square, or other payment account is selected.';
+});
+</script>
+</body>
+</html>
