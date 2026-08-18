@@ -20,3 +20,5 @@ To turn payment live, connect one of:
 - another hosted payment provider
 
 Once a checkout URL or payment provider is selected, the Continue to Payment button can be connected without redesigning the flow.
+
+
