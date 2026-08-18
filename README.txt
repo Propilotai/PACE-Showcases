@@ -20,6 +20,7 @@ Quick deployment:
 3. Choose "Deploy from a branch."
 4. Select your main branch and /(root).
 5. Save.
+
 6. Point paceshowcases.com to GitHub Pages after the site is live.
 
 Important:
