@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta name="description" content="PACE Winter Showcase event details and registration." />
+  <title>PACE Winter Showcase | Charleston, SC</title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="PACE Showcases home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="flag"></span>
+          <span class="path"></span>
+          <span class="p-letter">P</span>
+        </span>
+        <span class="brand-text">
+          <strong>PACE</strong>
+          <small>SHOWCASES</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#format">Format</a>
+        <a href="event.html">Events</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a class="btn btn-small" href="event.html">Select Event</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="subhero">
+      <div class="shell subhero-grid">
+        <div>
+          <div class="eyebrow">PACE WINTER SHOWCASE</div>
+          <h1>Charleston, South Carolina</h1>
+          <p class="subhero-lead">A two-day, in-person men's college golf recruiting showcase focused exclusively on Division II and Division III programs.</p>
+        </div>
+        <div class="event-ticket">
+          <div class="ticket-top">
+            <span>DEC</span>
+            <strong>19–20</strong>
+            <small>2026</small>
+          </div>
+          <div class="ticket-body">
+            <div><small>LOCATION</small><strong>Charleston, SC</strong></div>
+            <div><small>VENUE</small><strong>Course announcement coming soon</strong></div>
+            <div><small>FIELD</small><strong>Approximately 80 players</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-details-section">
+      <div class="shell detail-layout">
+        <div class="detail-main">
+          <div class="section-kicker">EVENT DETAILS</div>
+          <h2 class="detail-title">More than a tournament.</h2>
+          <p class="detail-intro">PACE is designed to give college coaches a complete look at each player — practice habits, ball striking, short game, competitive decision-making, composure, and on-course performance.</p>
+
+          <div class="schedule-grid">
+            <article class="schedule-card">
+              <span class="schedule-day">DAY 1 · SATURDAY</span>
+              <h3>Evaluation Day</h3>
+              <p>Structured practice-facility rotations with college coaches observing players across multiple parts of the game.</p>
+              <ul>
+                <li>Full-swing evaluation</li>
+                <li>Short-game evaluation</li>
+                <li>Putting evaluation</li>
+                <li>Coach observation and interaction</li>
+              </ul>
+            </article>
+
+            <article class="schedule-card">
+              <span class="schedule-day">DAY 2 · SUNDAY</span>
+              <h3>Competition Day</h3>
+              <p>18 holes of competitive golf with college coaches circulating throughout the course and evaluating players in a real tournament environment.</p>
+              <ul>
+                <li>18-hole competitive round</li>
+                <li>On-course coach evaluation</li>
+                <li>Official scoring</li>
+                <li>Closing player/coach access</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="detail-panel">
+            <div>
+              <small>WHO IT'S FOR</small>
+              <strong>Competitive male junior golfers</strong>
+              <p>Players actively exploring Division II and Division III college golf opportunities.</p>
+            </div>
+            <div>
+              <small>COACH FOCUS</small>
+              <strong>DII & DIII Men's Golf</strong>
+              <p>Regional, academically respected, and nationally competitive programs.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="purchase-card">
+          <div class="purchase-badge">PACE WINTER SHOWCASE</div>
+          <h3>Charleston · Dec. 19–20</h3>
+          <p class="purchase-copy">Reserve your place in the inaugural PACE Showcase field.</p>
+          <div class="price-row">
+            <span>Registration</span>
+            <strong>Price coming soon</strong>
+          </div>
+          <div class="purchase-note">Registration includes both showcase days. Final venue and pricing will be published before checkout opens.</div>
+          <button class="btn cart-btn" id="addToCart">Add to Cart</button>
+          <div class="cart-confirm" id="cartConfirm" aria-live="polite"></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell footer-inner">
+      <div>© 2026 PACE Showcases. All rights reserved.</div>
+      <div>Player Access & Collegiate Exposure</div>
+    </div>
+  </footer>
+
+<script>
+document.getElementById('addToCart').addEventListener('click', function () {
+  localStorage.setItem('paceCart', JSON.stringify({
+    event: 'PACE Winter Showcase',
+    dates: 'December 19–20, 2026',
+    location: 'Charleston, South Carolina'
+  }));
+  const msg = document.getElementById('cartConfirm');
+  msg.textContent = 'Added. Taking you to registration…';
+  setTimeout(function() { window.location.href = 'register.html'; }, 450);
+});
+</script>
+</body>
+</html>
